@@ -20,7 +20,7 @@ export default function App() {
   };
 
   return (
-    <div className="size-full relative overflow-hidden">
+    <div className="size-full min-h-screen relative overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
@@ -31,7 +31,7 @@ export default function App() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 size-full flex flex-col items-center justify-center p-4 sm:p-8">
+      <div className="relative z-10 size-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-8">
         {/* Settings Button - Top Left */}
         <div className="absolute top-4 left-4 sm:top-6 sm:left-6">
           <button

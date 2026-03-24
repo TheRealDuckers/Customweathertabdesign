@@ -13,9 +13,9 @@ export function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSearch} className="w-full max-w-2xl mx-auto mb-6 sm:mb-8 px-2 sm:px-0">
+    <form onSubmit={handleSearch} className="w-full max-w-2xl mb-6 sm:mb-8">
       <div className="relative group">
-        <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
+        <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5 z-10" />
         <input
           type="text"
           value={query}

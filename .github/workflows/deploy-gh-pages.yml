@@ -1,0 +1,60 @@
+COPY THIS FILE CONTENT TO GITHUB
+===================================
+
+After uploading your code to GitHub, create this file manually:
+
+FILE PATH: .github/workflows/deploy-gh-pages.yml
+
+INSTRUCTIONS:
+1. Go to your GitHub repository
+2. Click "Add file" → "Create new file"
+3. In the filename field, type: .github/workflows/deploy-gh-pages.yml
+   (GitHub will automatically create the folders)
+4. Copy and paste the content below
+5. Click "Commit new file"
+
+FILE CONTENT (copy everything below this line):
+---------------------------------------------------
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+
+---------------------------------------------------
+
+That's it! Once you commit this file, GitHub Actions will automatically deploy your site.

@@ -1,21 +1,3 @@
-COPY THIS FILE CONTENT TO GITHUB
-===================================
-
-After uploading your code to GitHub, create this file manually:
-
-FILE PATH: .github/workflows/deploy-gh-pages.yml
-
-INSTRUCTIONS:
-1. Go to your GitHub repository
-2. Click "Add file" → "Create new file"
-3. In the filename field, type: .github/workflows/deploy-gh-pages.yml
-   (GitHub will automatically create the folders)
-4. Copy and paste the content below
-5. Click "Commit new file"
-
-FILE CONTENT (copy everything below this line):
----------------------------------------------------
-
 name: Deploy to GitHub Pages
 
 on:
